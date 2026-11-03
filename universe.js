@@ -22,17 +22,17 @@ function mount() {
     for(let i=0;i<positions.length;i+=3){positions[i]=(Math.random()-.5)*35;positions[i+1]=(Math.random()-.5)*25;positions[i+2]=(Math.random()-.5)*22;}
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position',new THREE.BufferAttribute(positions,3));
-    stars = new THREE.Points(geometry,new THREE.PointsMaterial({color:0x80bcff,size:.024,transparent:true,opacity:.65,blending:THREE.AdditiveBlending,depthWrite:false}));
+    stars = new THREE.Points(geometry,new THREE.PointsMaterial({color:0x80bcff,size:.024,transparent:true,opacity:.3,blending:THREE.AdditiveBlending,depthWrite:false}));
     scene.add(stars);
     core = new THREE.Group();
     core.position.set(mobile?1.5:4,1,-4);
-    const wire = new THREE.Mesh(new THREE.IcosahedronGeometry(2.5,1),new THREE.MeshBasicMaterial({color:0x287ee4,wireframe:true,transparent:true,opacity:.16}));
+    const wire = new THREE.Mesh(new THREE.IcosahedronGeometry(2.5,1),new THREE.MeshBasicMaterial({color:0x287ee4,wireframe:true,transparent:true,opacity:.035}));
     core.add(wire);
-    const vertices=new THREE.Points(new THREE.IcosahedronGeometry(2.5,1),new THREE.PointsMaterial({color:0x8cecff,size:.055,transparent:true,opacity:.7}));
+    const vertices=new THREE.Points(new THREE.IcosahedronGeometry(2.5,1),new THREE.PointsMaterial({color:0x8cecff,size:.055,transparent:true,opacity:.18}));
     core.add(vertices);scene.add(core);
     ringGroup=new THREE.Group();ringGroup.position.set(-5,-1,-5);
     for(let i=0;i<4;i++){
-      const ring=new THREE.Mesh(new THREE.TorusGeometry(3+i*.34,.008,4,128),new THREE.MeshBasicMaterial({color:i%2?0x4177ff:0x73daff,transparent:true,opacity:.12,blending:THREE.AdditiveBlending}));
+      const ring=new THREE.Mesh(new THREE.TorusGeometry(3+i*.34,.008,4,128),new THREE.MeshBasicMaterial({color:i%2?0x4177ff:0x73daff,transparent:true,opacity:.025,blending:THREE.AdditiveBlending}));
       ring.rotation.set(.8+i*.17,.35+i*.2,i*.12);ringGroup.add(ring);
     }
     scene.add(ringGroup);
@@ -62,7 +62,7 @@ function animate(){
 }
 
 function enhance(){
-  const targets=document.querySelectorAll('.stats,.chapter,.panel,.stream-section,.links,.player-ids');
+  const targets=document.querySelectorAll('.about-section,.section-heading,.panel,.broadcast-info,.channel-section,.support-section,.social-list,.faq-section');
   const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.08});
   targets.forEach((el,index)=>{el.classList.add('reveal-ready');el.style.transitionDelay=`${(index%3)*70}ms`;observer.observe(el);});
   const progress=document.querySelector('.scroll-progress');
@@ -71,7 +71,7 @@ function enhance(){
   addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(update);}},{passive:true});update();
   if(!mobile&&!reduced.matches){
     document.querySelectorAll('.panel').forEach(panel=>{
-      panel.addEventListener('pointermove',e=>{const r=panel.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;panel.style.setProperty('--mx',x+'px');panel.style.setProperty('--my',y+'px');panel.style.transform=`rotateX(${(y/r.height-.5)*-5}deg) rotateY(${(x/r.width-.5)*5}deg)`;});
+      panel.addEventListener('pointermove',e=>{const r=panel.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;panel.style.setProperty('--mx',x+'px');panel.style.setProperty('--my',y+'px');panel.style.transform=`rotateX(${(y/r.height-.5)*-1.8}deg) rotateY(${(x/r.width-.5)*1.8}deg)`;});
       panel.addEventListener('pointerleave',()=>{panel.style.transform='';});
     });
   }
