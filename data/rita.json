@@ -8,9 +8,22 @@
   "language": "ru",
   "twitch_status": "Affiliate",
   "channel_created": "2019-01-09",
-  "stats": { "followers": 4986, "followers_goal": 5000, "avg_viewers": 31, "peak_viewers": 58, "source": "Twitch + TwitchTracker, 2026-11-03" },
-  "formats": ["Общение (Just Chatting)", "Dota 2"],
-  "games_unverified": ["RimWorld", "TFT"],
+  "stats": {
+    "followers": 4986,
+    "followers_goal": 5000,
+    "avg_viewers": 31,
+    "peak_viewers": 58,
+    "source": "Twitch + TwitchTracker, 2026-11-03",
+    "as_of": "2–3 ноября 2026"
+  },
+  "formats": [
+    "Общение (Just Chatting)",
+    "Dota 2"
+  ],
+  "games_unverified": [
+    "RimWorld",
+    "TFT"
+  ],
   "support_text": "Хочешь поднять мне настроение, заказать свой трек или просто ускорить апгрейд стрима?",
   "links": {
     "twitch": "https://www.twitch.tv/caxarokf",
@@ -20,5 +33,15 @@
     "instagram": "https://www.instagram.com/svadostb",
     "steam": "https://steamcommunity.com/id/svaDostb/"
   },
-  "ids": { "battletag": "krekk#21228", "dota2": "1792609265" }
+  "ids": {
+    "battletag": "krekk#21228",
+    "dota2": "1792609265"
+  },
+  "videos_note": "На дату обновления раздел видео пуст.",
+  "last_stream": "познакомимся ?)со взрослыми людьми",
+  "schedule": "понедельник, 02:00 UTC / 05:00 МСК",
+  "handles": {
+    "social": "svadostb",
+    "steam": "svaDostb"
+  }
 }
