@@ -62,7 +62,7 @@ function animate(){
 }
 
 function enhance(){
-  const targets=document.querySelectorAll('.about-section,.section-heading,.panel,.broadcast-info,.channel-section,.support-section,.social-list,.faq-section');
+  const targets=document.querySelectorAll('.about-section,.section-heading,.panel,.broadcast-info,.english-section,.channel-section,.support-section,.social-list,.faq-section');
   const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.08});
   targets.forEach((el,index)=>{el.classList.add('reveal-ready');el.style.transitionDelay=`${(index%3)*70}ms`;observer.observe(el);});
   const progress=document.querySelector('.scroll-progress');
