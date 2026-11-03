@@ -1,6 +1,6 @@
 # rita-site — правила для агентов (GPT, Claude)
 
-Фан-сайт-визитка стримерши **caxarokf** (Рита) — https://www.twitch.tv/caxarokf
+Фан-сайт-визитка стримерши **caxarokf** (репозиторий V0van200/caxarokf) (Рита) — https://www.twitch.tv/caxarokf
 
 - Хостинг: **GitHub Pages**, ветка `main`, корень репозитория. Пуш в `main` = публикация (~1 мин).
 - Только статика: HTML, CSS, JS. Без сборки.
