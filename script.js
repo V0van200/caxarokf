@@ -26,6 +26,7 @@ async function start() {
       });
     });
     document.getElementById('app').append(fragment);
+    document.dispatchEvent(new Event('site-ready'));
     document.title = `Рита (${data.nick}) — фан-страница`;
     document.getElementById('year').textContent = new Date().getFullYear();
     let toastTimer;
